@@ -1,0 +1,28 @@
+export const siteMetadata = {
+  title: "Aditya Jha",
+  author: "Aditya Jha",
+  headerTitle: "Aditya's Portfolio",
+  description:
+    "Full Stack + AI, building SaaS and AI products.",
+  language: "en-us",
+  siteUrl: "https://www.adityajhaa.co/",
+  siteRepo: "https://github.com/adityajha2005",
+  avatarImage: "/pfp.jpeg",
+  birthDate: "2005-06-21",
+  socialBanner: "/pfp.jpeg",
+  email: "mailto:2005ajha@gmail.com",
+  cal: "https://cal.com/adxtya-jha/15min",
+  github: "https://github.com/adityajha2005",
+  twitter: "https://x.com/adxtyahq",
+  twitterHandle: "@adxtyahq",
+  codepen: "",
+  linkedin: "https://www.linkedin.com/in/aditya-jha-654800280",
+  resume: "",
+  snippets: "",
+  carbonCode: "",
+  carbonPlacement: "",
+  locale: "en-US",
+  analytics: {
+    plausibleDataDomain: "adityajhaa.co",
+  },
+};
