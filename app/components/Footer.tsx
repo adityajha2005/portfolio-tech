@@ -38,10 +38,8 @@ const footerSections: FooterSection[] = [
   {
     title: "Extra",
     links: [
-      { href: "/changelog", label: "Changelog" },
       { href: "https://x.com/adxtyahq", label: "On X", isExternal: true },
       { href: "/links", label: "Links" },
-      { href: "/stats", label: "Stats" },
     ],
   },
 ];
@@ -62,7 +60,7 @@ export function Footer(): JSX.Element {
     <>
       <div className="relative max-w-7xl border-border-primary/50">
         <GridWrapper>
-          <div className="max-w-6xl divide-y px-4 lg:mx-auto lg:flex lg:divide-x lg:px-4 xl:px-0">
+          <div className="max-w-6xl px-4 lg:mx-auto lg:flex lg:px-4 xl:px-0">
             <div className="flex w-full py-6 text-sm">
               <div>
                 <div className="flex-grow space-y-6">

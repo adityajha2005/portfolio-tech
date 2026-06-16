@@ -7,14 +7,11 @@ import { CommunityWallCard } from "./CommunityWallCard";
 
 export function CreateCommunityNoteBuilder({
   onSubmit,
-  creator_name,
-  creator_avatar_url,
 }: {
   onSubmit: (formData: FormData) => Promise<void>;
-  creator_name: string;
-  creator_avatar_url: string;
 }) {
   const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
   const [patternIndex, setPatternIndex] = useState(() =>
     Math.floor(Math.random() * patterns.length),
   );
@@ -35,11 +32,28 @@ export function CreateCommunityNoteBuilder({
     };
   }, []);
 
+  const previewAvatar = name.trim()
+    ? `https://api.dicebear.com/8.x/initials/svg?seed=${encodeURIComponent(name.trim())}&backgroundColor=6366f1&textColor=ffffff`
+    : "";
+
   return (
     <form
       action={onSubmit}
       className="flex h-full flex-col items-center justify-center gap-6"
     >
+      {/* Name input */}
+      <div className="w-[375px]">
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Your name"
+          maxLength={40}
+          className="w-full rounded-full border border-border-primary bg-bg-primary px-5 py-2.5 text-sm text-text-primary placeholder-text-secondary focus:outline-none focus:ring-1 focus:ring-indigo-400"
+        />
+      </div>
+
       <div className="flex items-center gap-6">
         <button
           type="button"
@@ -64,8 +78,8 @@ export function CreateCommunityNoteBuilder({
           <div style={{ transform: `rotate(${rotation}deg)` }}>
             <CommunityWallCard
               patternIndex={patternIndex}
-              author={creator_name}
-              profilePicture={creator_avatar_url}
+              author={name || "Your name"}
+              profilePicture={previewAvatar}
               rotation={rotation}
               className="h-[450px] w-[375px]"
             />
@@ -128,14 +142,13 @@ export function CreateCommunityNoteBuilder({
               key={index}
               onClick={() => setPatternIndex(index)}
               type="button"
-              className={`h-3 w-3 rounded-full bg-gradient-to-b transition-all ${
-                pattern.gradient
-              } ${
+              className={`h-3 w-3 rounded-full bg-gradient-to-b transition-all ${pattern.gradient} ${
                 patternIndex === index ? "outline outline-2 outline-white" : ""
               }`}
             />
           ))}
         </div>
+
         <div className="flex h-9 items-center gap-2 divide-x-2 divide-text-secondary rounded-full bg-dark-primary px-4">
           <Link className="h-6 w-6" href="/community-wall">
             <button

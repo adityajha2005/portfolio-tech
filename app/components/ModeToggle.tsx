@@ -48,14 +48,12 @@ export function ModeToggle() {
         Math.max(y, window.innerHeight - y),
       );
 
-      const startViewTransition = (
-        document as Document & {
-          startViewTransition: (
-            callback: () => void,
-          ) => { ready: Promise<void> };
-        }
-      ).startViewTransition;
-      const transition = startViewTransition(applyTheme);
+      const doc = document as Document & {
+        startViewTransition: (
+          callback: () => void,
+        ) => { ready: Promise<void> };
+      };
+      const transition = doc.startViewTransition(applyTheme);
 
       transition.ready
         .then(() => {

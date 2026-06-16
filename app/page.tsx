@@ -1,6 +1,5 @@
 import { BgGradient } from "./components/BgGradient";
 import { NewsletterSignUp } from "./components/NewsletterSignUp";
-import { ChangelogBento } from "./components/ChangelogBento";
 import { fetchAndSortBlogPosts } from "./lib/utils";
 import { CommunityWallBento } from "./components/CommunityWallBento";
 import { CalendarBento } from "./components/CalendarBento";
@@ -150,27 +149,23 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* My Site Section */}
+
+        {/* Community Section */}
         <section className="relative space-y-10 md:space-y-16">
-          {/* <MySitePattern /> */}
-          <div className="space-y-4 text-balance">
+          <div className="space-y-4">
             <GridWrapper>
               <div className="text-center text-sm font-medium text-indigo-600">
-                <span>My Site</span>
+                <span>Community</span>
               </div>
             </GridWrapper>
             <GridWrapper>
-              <h2 className="text-center text-3xl font-medium leading-10 tracking-tighter text-text-primary md:mx-auto md:max-w-lg md:text-4xl">
-                My site is a playful sandbox. Explore, experiment, && say hello
+              <h2 className="mx-auto max-w-lg text-balance text-center text-3xl font-medium leading-10 tracking-tighter text-text-primary md:text-4xl">
+                Leave a message on the wall
               </h2>
             </GridWrapper>
           </div>
-
           <GridWrapper>
-            <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-              <ChangelogBento />
-              <CommunityWallBento />
-            </div>
+            <CommunityWallBento />
           </GridWrapper>
         </section>
 
