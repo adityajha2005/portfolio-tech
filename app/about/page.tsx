@@ -27,36 +27,14 @@ export default function AboutPage() {
               </h1>
             </div>
             <div className="order-1 my-12 flex-shrink-0 lg:order-2 lg:my-0">
-              <div className="relative mx-auto w-full max-w-[400px]">
-                <div className="relative grid grid-cols-3">
-                  <div className="relative z-20 -translate-y-2">
-                    <Photo
-                      width={140}
-                      height={140}
-                      src="/pfp.jpeg"
-                      alt="Aditya Jha"
-                      direction="left"
-                    />
-                  </div>
-                  <div className="relative z-30">
-                    <Photo
-                      width={140}
-                      height={140}
-                      src="/pfp.jpeg"
-                      alt="Aditya Jha"
-                      direction="right"
-                    />
-                  </div>
-                  <div className="relative z-20 translate-y-4">
-                    <Photo
-                      width={140}
-                      height={140}
-                      src="/pfp.jpeg"
-                      alt="Aditya Jha"
-                      direction="left"
-                    />
-                  </div>
-                </div>
+              <div className="relative mx-auto w-fit">
+                <Photo
+                  width={140}
+                  height={140}
+                  src="/pfp.jpeg"
+                  alt="Aditya Jha"
+                  direction="right"
+                />
               </div>
             </div>
           </div>

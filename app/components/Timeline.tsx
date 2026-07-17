@@ -15,17 +15,16 @@ export function Timeline({ avatarUrl }: TimelineProps) {
     offset: ["end 50%", "start 50%"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // Animate `top` (percentage of the container) instead of translating a
+  // full-height element — a 100% translateY overflowed the document and
+  // left a large blank scroll area below the footer.
+  const top = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
 
   return (
     <div ref={containerRef} className="relative h-full w-full">
       <motion.div
         className="absolute -left-0.5 z-10 flex"
-        style={{
-          top: 0,
-          height: "100%",
-          y: useTransform(scrollYProgress, [0, 1], ["100%", "0%"]),
-        }}
+        style={{ top }}
       >
         <div className="relative h-9 w-9 overflow-hidden rounded-full border-2 border-bg-primary bg-bg-primary shadow-md">
           <Image src={avatarUrl} alt="Profile" fill className="object-cover" />

@@ -4,6 +4,19 @@ import { Timeline } from "./Timeline";
 const resumeData: ResumeData = {
   experiences: [
     {
+      company: "Entelligence AI",
+      period: "Jul 2026 - Present",
+      positions: [
+        {
+          title: "Developer Relations",
+          description: [
+            "DevRel for an AI production reliability platform: PR reviews grounded in incident history, live production monitoring, and self-healing fixes.",
+            "Creating technical content and engaging the developer community to drive adoption and feed insights back into the product.",
+          ],
+        },
+      ],
+    },
+    {
       company: "Codewisp",
       period: "Apr 2026 - Present",
       positions: [

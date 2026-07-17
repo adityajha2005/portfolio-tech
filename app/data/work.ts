@@ -10,6 +10,15 @@ export type WorkItem = {
 
 export const workItems: WorkItem[] = [
   {
+    title: "Entelligence AI",
+    company: "Entelligence AI",
+    role: "Developer Relations",
+    description:
+      "Developer Relations for an AI production reliability platform that reviews PRs against incident history and self-heals production failures. Creating technical content, engaging the developer community, and gathering feedback to shape the product.",
+    image: "/projects/entelligence.png",
+    url: "https://entelligence.ai/",
+  },
+  {
     title: "Codewisp",
     company: "Codewisp",
     role: "AI Engineer (YC W26)",
