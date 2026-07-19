@@ -8,6 +8,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import { cx } from "./lib/utils";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -67,6 +68,7 @@ export default function RootLayout({
             <Footer />
           </main>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
