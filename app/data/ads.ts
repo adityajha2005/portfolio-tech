@@ -49,17 +49,29 @@ export const AD_SLOTS: AdSlot[] =
     ? SLOTS.map((slot) => ({ ...slot, sponsor: DEMO[slot.id] ?? slot.sponsor }))
     : SLOTS;
 
-export const PAYMENT_METHODS = [
+type PaymentMethod = {
+  name: string;
+  detail: string;
+  note: string;
+  href?: string;
+  hrefLabel?: string;
+};
+
+export const PAYMENT_METHODS: PaymentMethod[] = [
   {
     name: "PayPal",
     // Goods & Services only — friends-and-family on commercial payments breaks PayPal's terms.
     detail: contactEmail,
+    href: "https://paypal.me/adxtyahq",
+    hrefLabel: "Pay with PayPal",
     note: "Send as Goods & Services, not Friends & Family.",
   },
   {
     name: "Wise",
-    detail: contactEmail,
-    note: "USD transfer. Email me first if you need an invoice with full bank details.",
+    detail: "wise.com/pay/business/adityakumarjha2",
+    href: "https://wise.com/pay/business/adityakumarjha2",
+    hrefLabel: "Pay with Wise",
+    note: "Pays in USD, EUR, GBP, and more. Send the receipt with your email.",
   },
   {
     name: "Crypto — Solana",

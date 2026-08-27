@@ -112,6 +112,16 @@ export default function SponsorPage() {
                 {method.detail}
               </code>
               <p className="mt-2 text-xs text-text-tertiary">{method.note}</p>
+              {method.href ? (
+                <Link
+                  href={method.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex w-fit items-center rounded-full bg-purple-primary px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
+                >
+                  {method.hrefLabel ?? "Pay now"} →
+                </Link>
+              ) : null}
             </div>
           ))}
         </div>

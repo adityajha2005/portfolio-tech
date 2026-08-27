@@ -2,8 +2,10 @@ export const ossData = {
   mergedCount: 50,
   summary:
     "Contributing to open source lately: AI agents, security hardening, and production bug fixes.",
+  // /<user>?q=... is ignored by GitHub — it just renders the profile.
+  // The PR search lives at /search with type=pullrequests.
   profileUrl:
-    "https://github.com/adityajha2005?q=is%3Apr+author%3Aadityajha2005+is%3Amerged",
+    "https://github.com/search?q=is%3Apr+author%3Aadityajha2005+is%3Amerged&type=pullrequests&s=updated&o=desc",
   repos: [
     { name: "clawvisor/clawvisor", mergedCount: 14 },
     { name: "livekit/agents", mergedCount: 3 },
