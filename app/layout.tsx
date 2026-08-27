@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "app/components/Navbar";
+import { AdRail } from "./components/AdRails";
 import { siteMetadata } from "app/data/siteMetadata";
 import { Footer } from "./components/Footer";
 import { BgGradient } from "./components/BgGradient";
@@ -44,13 +45,14 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${GeistMono.variable} ${GeistSans.variable}`}
     >
-      <body className="flex min-h-screen flex-col bg-bg-primary font-sans text-text-primary md:max-w-7xl lg:mx-auto lg:flex-row">
+      <body className="flex min-h-screen flex-col bg-bg-primary font-sans text-text-primary md:max-w-7xl lg:mx-auto lg:flex-row xl:max-w-[104rem]">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange={false}
         >
+          <AdRail side="left" />
           <main
             className={cx(
               "relative flex flex-1 flex-col overflow-x-hidden border-x border-border-primary/50",
@@ -67,6 +69,7 @@ export default function RootLayout({
             </div>
             <Footer />
           </main>
+          <AdRail side="right" />
         </ThemeProvider>
         <Analytics />
       </body>
